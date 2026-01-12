@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Collector Releases • OpenTelemetry Config Hub</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, sans-serif;
+        background: #0b1220;
+        color: #e5e7eb;
+        padding: 32px;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: auto;
+      }
+
+      h1 {
+        margin-bottom: 8px;
+      }
+
+      .muted {
+        color: #9ca3af;
+        margin-bottom: 24px;
+      }
+
+      .latest {
+        background: #111a2e;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 32px;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      li {
+        padding: 14px 16px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      li:last-child {
+        border-bottom: none;
+      }
+
+      a {
+        color: #38bdf8;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <a href="/">← Back to home</a>
+
+      <h1>Collector Releases</h1>
+      <p class="muted">
+        Auto-tracked OpenTelemetry Collector Contrib versions
+      </p>
+
+      <div class="latest" id="latest">
+        Loading latest version…
+      </div>
+
+      <ul id="release-list"></ul>
+    </div>
+
+    <script>
+      const DATA_URL =
+        "https://raw.githubusercontent.com/rahulmhatre2505/otel-config-hub-data/main/releases/index.json";
+
+      fetch(DATA_URL)
+        .then((res) => res.json())
+        .then((data) => {
+          document.getElementById(
+            "latest"
+          ).innerHTML = `<strong>Latest version:</strong> v${data.latest}`;
+
+          const list = document.getElementById("release-list");
+
+          data.releases.forEach((version) => {
+            const li = document.createElement("li");
+            li.innerHTML = `
+              <span>v${version}</span>
+              <a href="/release.html?version=${version}">
+                View details →
+              </a>
+            `;
+            list.appendChild(li);
+          });
+        })
+        .catch(() => {
+          document.getElementById("latest").innerText =
+            "Unable to load release data.";
+        });
+    </script>
+  </body>
+</html>
