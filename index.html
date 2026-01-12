@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OpenTelemetry Config Hub</title>
 
-    <!-- Google Font -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
@@ -27,8 +26,7 @@
 
       body {
         margin: 0;
-        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
-          "Segoe UI", sans-serif;
+        font-family: Inter, system-ui, sans-serif;
         background: radial-gradient(
           1200px 600px at 10% 10%,
           #132043,
@@ -72,17 +70,13 @@
 
       h1 {
         font-size: clamp(32px, 5vw, 44px);
-        line-height: 1.2;
-        margin: 0 0 16px 0;
-        font-weight: 700;
-        letter-spacing: -0.02em;
+        margin-bottom: 16px;
       }
 
       p {
         font-size: 18px;
-        line-height: 1.6;
         color: var(--muted);
-        margin: 0 0 28px 0;
+        margin-bottom: 28px;
       }
 
       .features {
@@ -100,96 +94,14 @@
       }
 
       .feature h3 {
-        margin: 0 0 8px 0;
+        margin-bottom: 8px;
         font-size: 16px;
-        font-weight: 600;
-        color: var(--text);
       }
 
       .feature span {
         font-size: 14px;
         color: var(--muted);
-        line-height: 1.5;
       }
 
       footer {
-        margin-top: 40px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 12px;
-      }
-
-      footer span {
-        font-size: 13px;
-        color: var(--muted);
-      }
-
-      .link {
-        font-size: 13px;
-        color: var(--accent);
-        text-decoration: none;
-      }
-
-      .link:hover {
-        text-decoration: underline;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="container">
-      <div class="card">
-        <div class="badge">🚧 Under active development</div>
-
-        <h1>OpenTelemetry Config Hub</h1>
-
-        <p>
-          A community-driven hub to make OpenTelemetry Collector configuration
-          simple, readable, and version-aware - starting from infrastructure
-          and real-world use cases.
-        </p>
-
-        <div class="features">
-          <div class="feature">
-            <h3>Infrastructure-first configs</h3>
-            <span>
-              Linux, Windows, macOS, Kubernetes - mapped to practical monitoring
-              goals.
-            </span>
-          </div>
-
-          <div class="feature">
-            <h3>Opinionated YAML examples</h3>
-            <span>
-              Minimal, production-ready configs with clear defaults and
-              trade-offs explained.
-            </span>
-          </div>
-
-          <div class="feature">
-            <h3>Collector release tracking</h3>
-            <span>
-              Understand what changed between versions and how it impacts your
-              configs.
-            </span>
-          </div>
-        </div>
-
-        <footer>
-          <span>opentelemetry.in • Built with ❤️ for the OTel community</span>
-          <a
-            class="link"
-            href="https://github.com/rahulmhatre2505/opentelemetry-in"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View on GitHub →
-          </a>
-          <a class="link" href="/releases.html">View Collector Releases →</a>
-        </footer>
-      </div>
-    </div>
-  </body>
-</html>
+        margin-top: 40px
