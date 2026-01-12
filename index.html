@@ -1,107 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OpenTelemetry Config Hub</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OpenTelemetry Config Hub</title>
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 
-    <style>
-      :root {
-        --bg: #0b1220;
-        --card: #111a2e;
-        --text: #e5e7eb;
-        --muted: #9ca3af;
-        --accent: #38bdf8;
-        --accent-soft: rgba(56, 189, 248, 0.15);
-      }
+  <style>
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      background: #0b1220;
+      color: #e5e7eb;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-      * {
-        box-sizing: border-box;
-      }
+    .card {
+      background: #111a2e;
+      border-radius: 16px;
+      padding: 48px;
+      max-width: 900px;
+      width: 90%;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+    }
 
-      body {
-        margin: 0;
-        font-family: Inter, system-ui, sans-serif;
-        background: radial-gradient(
-          1200px 600px at 10% 10%,
-          #132043,
-          var(--bg)
-        );
-        color: var(--text);
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 24px;
-      }
+    h1 {
+      margin-top: 0;
+      font-size: 40px;
+    }
 
-      .container {
-        max-width: 900px;
-        width: 100%;
-      }
+    p {
+      color: #9ca3af;
+      font-size: 18px;
+    }
 
-      .card {
-        background: linear-gradient(
-          180deg,
-          var(--card),
-          rgba(17, 26, 46, 0.85)
-        );
-        border: 1px solid rgba(255, 255, 255, 0.06);
-        border-radius: 16px;
-        padding: 48px;
-        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
-      }
+    a {
+      color: #38bdf8;
+      text-decoration: none;
+      font-size: 14px;
+    }
 
-      .badge {
-        display: inline-block;
-        padding: 6px 12px;
-        font-size: 13px;
-        font-weight: 500;
-        color: var(--accent);
-        background: var(--accent-soft);
-        border-radius: 999px;
-        margin-bottom: 20px;
-      }
+    a:hover {
+      text-decoration: underline;
+    }
 
-      h1 {
-        font-size: clamp(32px, 5vw, 44px);
-        margin-bottom: 16px;
-      }
+    .links {
+      margin-top: 32px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
 
-      p {
-        font-size: 18px;
-        color: var(--muted);
-        margin-bottom: 28px;
-      }
+<body>
+  <div class="card">
+    <h1>OpenTelemetry Config Hub</h1>
 
-      .features {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 16px;
-        margin-top: 32px;
-      }
+    <p>
+      Infrastructure-first OpenTelemetry Collector configs and
+      version-aware insights.
+    </p>
 
-      .feature {
-        padding: 20px;
-        border-radius: 12px;
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.05);
-      }
-
-      .feature h3 {
-        margin-bottom: 8px;
-        font-size: 16px;
-      }
-
-      .feature span {
-        font-size: 14px;
-        color: var(--muted);
-      }
-
-      footer {
-        margin-top: 40px
+    <div class="links">
+      <a href="/releases/">View Collector Releases →</a>
+      <a href="https://github.com/rahulmhatre2505/opentelemetry-in" target="_blank">
+        View on GitHub →
+      </a>
+    </div>
+  </div>
+</body>
+</html>
