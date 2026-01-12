@@ -90,12 +90,13 @@
             `Collector v${data.version}`;
 
           const date = new Date(data.published_at).toDateString();
-          document.getElementById(
-            "meta"
-          ).innerHTML = `Released on ${date} • <a href="/release.html?version=${version}">
-  View details →
-</a>
->`;
+
+          document.getElementById("meta").innerHTML = `
+            Released on ${date} •
+            <a href="${data.url}" target="_blank" rel="noopener noreferrer">
+              View on GitHub →
+            </a>
+          `;
 
           document.getElementById("notes").innerText =
             data.notes || "No release notes available.";
