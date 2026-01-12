@@ -55,14 +55,12 @@
 
   <body>
     <div class="container">
-      <a href="/releases.html">← Back to releases</a>
+      <a href="/releases/">← Back to releases</a>
 
       <h1 id="title">Loading…</h1>
       <div class="meta" id="meta"></div>
 
-      <div class="card" id="notes">
-        Fetching release notes…
-      </div>
+      <div class="card" id="notes">Fetching release notes…</div>
     </div>
 
     <script>
@@ -79,9 +77,7 @@
 
       fetch(DATA_URL)
         .then((res) => {
-          if (!res.ok) {
-            throw new Error("Release not found");
-          }
+          if (!res.ok) throw new Error("Not found");
           return res.json();
         })
         .then((data) => {
