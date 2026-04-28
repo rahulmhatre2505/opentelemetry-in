@@ -46,10 +46,10 @@ export default function Home() {
       <section className="bg-midnight text-white py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 animate-fade-in-up">
-            The Authoritative Voice of <span className="text-accent">OpenTelemetry</span> in India
+            A Community Hub for <span className="text-accent">OpenTelemetry</span> in India
           </h1>
           <p className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto mb-10 animate-fade-in-up [animation-delay:200ms]">
-            High-intent editorial content and community-driven insights for the next generation of telemetry pipelines.
+            Sharing insights, editorial content, and best practices for the next generation of cloud-native observability.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up [animation-delay:400ms]">
             <Link 
