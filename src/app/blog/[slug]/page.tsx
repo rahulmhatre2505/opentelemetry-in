@@ -100,15 +100,20 @@ export default async function ArticlePage({ params }: { params: { slug: string }
   }
 
   return (
-    <article className="py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-      <div className="mb-12 text-center">
-        <div className="text-xs font-bold uppercase tracking-widest text-accent mb-4">
-          {article.category} • {article.date}
+    <article className="py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto font-serif">
+      <div className="mb-12 text-center border-b border-foreground/10 pb-12">
+        <div className="text-[10px] font-black uppercase tracking-[0.3em] text-muted mb-6">
+          {article.category} — {article.date}
         </div>
-        <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-8">
+        <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-8 leading-none">
           {article.title}
         </h1>
-        <div className="aspect-video w-full rounded-3xl overflow-hidden mb-12 shadow-2xl">
+        <div className="flex justify-center items-center gap-4 text-sm italic text-muted mb-12">
+          <span>By Our Editorial Correspondent</span>
+          <span className="w-1 h-1 bg-muted rounded-full" />
+          <span>India Edition</span>
+        </div>
+        <div className="aspect-[21/9] w-full rounded-none overflow-hidden mb-12 grayscale">
           <img 
             src={article.image} 
             alt={article.title}
@@ -118,19 +123,19 @@ export default async function ArticlePage({ params }: { params: { slug: string }
       </div>
 
       <div 
-        className="prose prose-lg dark:prose-invert max-w-none editorial-content"
+        className="prose prose-xl dark:prose-invert max-w-none editorial-content first-letter:text-7xl first-letter:font-black first-letter:mr-3 first-letter:float-left"
         dangerouslySetInnerHTML={{ __html: article.content }}
       />
 
-      <div className="mt-24 pt-12 border-t border-slate-200 dark:border-slate-800">
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-8 bg-slate-50 dark:bg-slate-900 rounded-3xl p-10">
+      <div className="mt-24 pt-12 border-t-4 border-double border-foreground">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-8 bg-slate-50 dark:bg-slate-900 p-10 border border-foreground/10">
           <div className="max-w-md text-center sm:text-left">
-            <h3 className="text-2xl font-bold mb-2">Build better pipelines.</h3>
-            <p className="text-muted">Take control of your telemetry with CollectorCtrl. Neutral, powerful fleet management.</p>
+            <h3 className="text-2xl font-black uppercase tracking-tight mb-2">Notice to Readers</h3>
+            <p className="text-muted font-serif">Maintain consistent telemetry pipelines with CollectorCtrl. Neutral, powerful fleet management for the modern enterprise.</p>
           </div>
           <Link 
             href="https://collectorctrl.com" 
-            className="bg-midnight dark:bg-white text-white dark:text-midnight px-8 py-4 rounded-full font-bold hover:opacity-90 transition-opacity whitespace-nowrap"
+            className="bg-midnight dark:bg-white text-white dark:text-midnight px-8 py-4 rounded-none font-black uppercase tracking-widest hover:opacity-90 transition-opacity whitespace-nowrap border-2 border-foreground"
           >
             Learn More
           </Link>
@@ -138,8 +143,8 @@ export default async function ArticlePage({ params }: { params: { slug: string }
       </div>
       
       <div className="mt-12 text-center">
-        <Link href="/" className="text-muted hover:text-foreground font-medium flex items-center justify-center gap-2">
-          ← Back to the Editorial
+        <Link href="/" className="text-muted hover:text-foreground font-black uppercase tracking-widest text-xs flex items-center justify-center gap-2">
+          ← Back to Front Page
         </Link>
       </div>
     </article>

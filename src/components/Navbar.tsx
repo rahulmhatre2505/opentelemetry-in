@@ -1,31 +1,45 @@
 import Link from 'next/link';
 
 export default function Navbar() {
+  const today = new Date().toLocaleDateString('en-US', { 
+    weekday: 'long', 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric' 
+  });
+
   return (
-    <nav className="border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-midnight/80 backdrop-blur-md sticky top-0 z-50">
+    <header className="bg-background border-b border-foreground/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16 items-center">
-          <div className="flex items-center">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-midnight dark:bg-white rounded-lg flex items-center justify-center">
-                <span className="text-white dark:text-midnight font-bold text-xl">O</span>
-              </div>
-              <span className="text-xl font-bold tracking-tight">opentelemetry.in</span>
-            </Link>
-          </div>
-          <div className="hidden md:flex items-center space-x-8">
-            <Link href="/blog" className="text-sm font-medium hover:text-accent transition-colors">Editorial</Link>
-            <Link href="/community" className="text-sm font-medium hover:text-accent transition-colors">Community</Link>
-            <Link href="/resources" className="text-sm font-medium hover:text-accent transition-colors">Resources</Link>
-            <Link 
-              href="https://collectorctrl.com" 
-              className="bg-midnight dark:bg-white text-white dark:text-midnight px-4 py-2 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity"
-            >
-              CollectorCtrl
-            </Link>
-          </div>
+        {/* Top bar with date and weather-like info */}
+        <div className="flex justify-between items-center py-2 text-[10px] uppercase tracking-[0.2em] font-bold border-b border-foreground/10">
+          <span>{today}</span>
+          <span>India Edition</span>
+          <span>Vol. I — No. 01</span>
         </div>
+
+        {/* Masthead */}
+        <div className="py-8 text-center border-b-4 border-double border-foreground">
+          <Link href="/" className="inline-block">
+            <h1 className="text-5xl md:text-8xl font-black tracking-tighter uppercase italic">
+              The Times of Telemetry
+            </h1>
+          </Link>
+          <p className="mt-2 text-sm italic font-serif">
+            "The definitive record of cloud-native observability and community progress"
+          </p>
+        </div>
+
+        {/* Navigation */}
+        <nav className="flex justify-center items-center py-3 space-x-8 text-xs font-black uppercase tracking-widest overflow-x-auto whitespace-nowrap">
+          <Link href="/blog" className="hover:underline">Editorial</Link>
+          <Link href="/community" className="hover:underline">Community</Link>
+          <Link href="/resources" className="hover:underline">Resources</Link>
+          <Link href="/market" className="hover:underline">Market Watch</Link>
+          <Link href="/technology" className="hover:underline">Technology</Link>
+          <Link href="https://collectorctrl.com" className="hover:underline text-muted">CollectorCtrl</Link>
+        </nav>
       </div>
-    </nav>
+    </header>
   );
 }
