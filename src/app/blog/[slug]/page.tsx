@@ -1,7 +1,14 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
-export const runtime = 'edge';
+export function generateStaticParams() {
+  return [
+    { slug: 'rise-of-telemetry-pipeline' },
+    { slug: 'paradox-of-choice' },
+    { slug: 'market-watch-bindplane' },
+    { slug: 'spotlight-collectorctrl-drift' },
+  ];
+}
 
 const articlesContent = {
   "rise-of-telemetry-pipeline": {
